@@ -21,11 +21,10 @@ function adicionarAmigo() {
 
 
 function sortearAmigo() {
+    document.querySelector(".result-list").innerHTML = "";
     let limiteListaAmigos = listaAmigosParaSortear.length;
-
     let randomNumber = parseInt(Math.random() * limiteListaAmigos);
     let amigoSorteado = listaAmigosParaSortear[randomNumber];
-
     const containerWinner = document.getElementById("resultado");
     const li = document.createElement("li");
     li.textContent = amigoSorteado;
