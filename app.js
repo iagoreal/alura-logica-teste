@@ -2,6 +2,7 @@ let listaAmigosParaSortear = [];
 let nomeAmigo
 
 
+
 function adicionarAmigo() {
     nomeAmigo = document.querySelector(".input-name").value;
 
@@ -10,14 +11,26 @@ function adicionarAmigo() {
 
     } else {
         listaAmigosParaSortear.push(nomeAmigo);
-        const container = document.getElementById("listaAmigos");
+        const containerLista = document.getElementById("listaAmigos");
         const li = document.createElement("li");
         li.textContent = nomeAmigo;
-        container.appendChild(li);
+        containerLista.appendChild(li);
         document.querySelector(".input-name").value = "";
-        console.log(listaAmigosParaSortear);
-
     }
+}
+
+
+function sortearAmigo() {
+    let limiteListaAmigos = listaAmigosParaSortear.length;
+
+    let randomNumber = parseInt(Math.random() * limiteListaAmigos);
+    let amigoSorteado = listaAmigosParaSortear[randomNumber];
+
+    const containerWinner = document.getElementById("resultado");
+    const li = document.createElement("li");
+    li.textContent = amigoSorteado;
+    containerWinner.appendChild(li);
+
 }
 
 
